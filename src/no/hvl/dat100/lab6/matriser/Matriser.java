@@ -32,7 +32,7 @@ public class Matriser {
 		int[][] multiplisert = new int[matrise.length][matrise.length];
 
 		for (int j = 0; j < matrise.length; j++) {
-			for (int i = 0; i < matrise.length; i++) {
+			for (int i = 0; i < matrise[j].length; i++) {
 				multiplisert[j][i] = matrise[j][i] * tall;
 
 			}
@@ -51,6 +51,7 @@ public class Matriser {
 				if (a[i][j] != b[i][j]) {
 					return false;
 				}
+				
 			}
 
 		}
@@ -59,19 +60,19 @@ public class Matriser {
 
 	// e)
 	public static int[][] speile(int[][] matrise) {
-		// Kopierer matrisen sin lengde
-		int[][] kopi = new int[matrise.length][matrise.length];
+		// Lager en kopi av matrisen som skal retuneres
+		int[][] speilet = new int[matrise.length][matrise.length];
 
 		int z = 0;
-		for (int i = 0; i < kopi.length; i++) {
+		for (int i = 0; i < speilet.length; i++) {
 
-			for (int j = 0; j < kopi[i].length; j++) {
-				kopi[i][j] = matrise[j][z];
+			for (int j = 0; j < speilet[i].length; j++) {
+				speilet[i][j] = matrise[j][z];
 			}
 
 			z++;
 		}
-		return kopi;
+		return speilet;
 
 	}
 
